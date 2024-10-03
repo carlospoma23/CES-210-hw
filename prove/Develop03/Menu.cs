@@ -1,12 +1,12 @@
 public class Menu
 {
-    private ScriptureManager _scriptureManager;
-
-    public Menu(ScriptureManager manager)
-    {
-        _scriptureManager = manager;
-    }
-
+    //private ScriptureManager _scriptureManager; 
+    /*
+        public Menu(ScriptureManager manager)
+        {
+            _scriptureManager = manager;
+        }
+    */
     public void DisplayMenu()
     {
         Console.WriteLine("1. Enter (New Scripture)");
@@ -17,30 +17,34 @@ public class Menu
         Console.WriteLine("6. Quit");
     }
 
-    public void ProcessSelection()
-    {
-        int _choice = int.Parse(Console.ReadLine());
-
-        switch (_choice)
+    /*
+        public void ProcessSelection()
         {
-            case 1:
-                scriptureManager.EnterNewScripture();
-                break;
-            case 2:
-                scriptureManager.DisplayScriptures();
-                break;
-            case 3:
-                scriptureManager.LoadScriptures();
-                break;
-            case 4:
-                scriptureManager.SaveScriptures();
-                break;
-            case 5:
-                scriptureManager.MemorizeScripture();
-                break;
-            case 6:
-                Console.WriteLine("Thank you for your time Good Bye!");
-                break;
+            int _choice = int.Parse(Console.ReadLine());
+
+            switch (_choice)
+            {
+                case 1:
+                    ScriptureManager.EnterNewScripture();
+                    break;
+                case 2:
+                    ScriptureManager.DisplayScriptures();
+                    break;
+                case 3:
+                    ScriptureManager.LoadScriptures();
+                    break;
+                case 4:
+                    ScriptureManager.SaveScriptures();
+                    break;
+                case 5:
+                    ScriptureManager.MemorizeScripture();
+                    break;
+                case 6:
+                    Console.WriteLine("Thank you for your time Good Bye!");
+                    break;
+            }
         }
-    }
+
+
+    */
 }
