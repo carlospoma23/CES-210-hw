@@ -1,42 +1,66 @@
-using System;
-
-class Program
+public class Scripture
 {
-    static void Main(string[] args)
+    Reference _reference;
+    List<Word> _words;
+    public Reference getReference()
     {
-        Console.WriteLine("Hello Develop03 World!");
-
-        Reference _scriptureReference = new Reference("Proverbs", 3, 5, 6);
-
-        //Scripture text;
-        string _scriptureText = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.";
-
-        Scripture _scripture = new Scripture(_scriptureReference, _scriptureText);
-
-        while (true)
+        return _reference;
+    }
+    public void setReference(Reference reference)
+    {
+        _reference = reference;
+    }
+    //Setting Constructors
+    public Scripture(Reference reference, string scriptureText)
+    {
+        _reference = reference;
+        _words = new List<Word>();
+        //spliting the scripture
+        string[] wordArray = scriptureText.Split(' ');
+        foreach (string word in wordArray)
         {
-            _scripture.GetDisplay();
-
-            if (_scripture.isCompletelyHidden())
-            {
-                Console.WriteLine("all words have been hidden");
-                break;
-
-            }
-
-            Console.WriteLine("Press Enter to hide words or type 'quit' to exit.");
-            string input = Console.ReadLine();
-
-            if (input.ToLower() == "quit")
-            {
-                Console.WriteLine("Thank you, You did a great job.");
-                break;
-            }
-
-            _scripture.HideRandomWords(3);
-
-
+            _words.Add(new Word(word));
         }
-
+    }
+    //Method hide randomly words
+    public void HideRandomWords(int numberToHide)
+    {
+        Random _random = new Random();
+        int wordsHidden = 0;
+        while (wordsHidden < numberToHide)
+        {
+            int randomIndex = _random.Next(_words.Count);
+            if (!_words[randomIndex].isHidden())
+            {
+                _words[randomIndex].Hide();
+                wordsHidden++;
+            }
+            if (isCompletelyHidden())
+            {
+                break;
+            }
+        }
+    }
+    //Method allows to display scripture text and its reference.
+    public void GetDisplay()
+    {
+        Console.Clear();
+        Console.Write(_reference.GetDisplayReferenceText());
+        foreach (Word word in _words)
+        {
+            Console.Write(word.GetDisplayText() + " ");
+        }
+        Console.WriteLine();
+    }
+    public bool isCompletelyHidden()
+    {
+        foreach (Word word in _words)
+        {
+            if (!word.isHidden())
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
