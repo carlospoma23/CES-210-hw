@@ -24,11 +24,12 @@ public class Word
 
 
 
-    public bool GetIsHidden()
-    {
-        return _isHidden;
-    }
-
+    /*
+        public bool GetIsHidden()
+        {
+            return _isHidden;
+        }
+    */
     public void SetIsHidden(bool isHidden)
     {
         _isHidden = isHidden;

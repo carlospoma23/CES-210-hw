@@ -1,88 +1,42 @@
-public class Scripture
+using System;
+
+class Program
 {
-
-    Reference _reference;
-    List<Word> _words;
-
-
-    public Reference getReference()
+    static void Main(string[] args)
     {
-        return _reference;
-    }
+        Console.WriteLine("Hello Develop03 World!");
 
-    public void setReference(Reference reference)
-    {
-        _reference = reference;
-    }
+        Reference _scriptureReference = new Reference("Proverbs", 3, 5, 6);
 
-    //Setting Constructors
-    public Scripture(Reference reference, string scriptureText)
-    {
-        _reference = reference;
-        _words = new List<Word>();
-        //spliting the scripture
+        //Scripture text;
+        string _scriptureText = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.";
 
-        string[] wordArray = scriptureText.Split(' ');
+        Scripture _scripture = new Scripture(_scriptureReference, _scriptureText);
 
-        foreach (string word in wordArray)
+        while (true)
         {
-            _words.Add(new Word(word));
-        }
+            _scripture.GetDisplay();
 
-    }
-
-    //Method hide randomly words
-    public void HideRandomWords(int numberToHide)
-    {
-        Random _random = new Random();
-        int wordsHidden = 0;
-
-        while (wordsHidden < numberToHide)
-        {
-            int randomIndex = _random.Next(_words.Count);
-
-            if (!_words[randomIndex].isHidden())
+            if (_scripture.isCompletelyHidden())
             {
-                _words[randomIndex].Hide();
-                wordsHidden++;
+                Console.WriteLine("all words have been hidden");
+                break;
+
             }
 
-            if (isCompletelyHidden())
+            Console.WriteLine("Press Enter to hide words or type 'quit' to exit.");
+            string input = Console.ReadLine();
+
+            if (input.ToLower() == "quit")
             {
+                Console.WriteLine("Thank you, You did a great job.");
                 break;
             }
-        }
-    }
 
-    //Method allows to display scripture text and its reference.
-    public void GetDisplay()
-    {
-        Console.Clear();
-        Console.Write(_reference.GetDisplayReferenceText());
-        foreach (Word word in _words)
-        {
-            Console.Write(word.GetDisplayText() + " ");
-        }
-        Console.WriteLine();
+            _scripture.HideRandomWords(3);
 
-
-    }
-
-    public bool isCompletelyHidden()
-    {
-        foreach (Word word in _words)
-        {
-
-            if (!word.isHidden())
-            {
-                return false;
-            }
 
         }
-        return true;
-    }
 
+    }
 }
-
-
-
