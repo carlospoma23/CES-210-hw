@@ -17,7 +17,6 @@ class Program
         Comment comment2 = new Comment("Jose Perez", "Super Video, I learn a lot. ");
         Comment comment3 = new Comment("Maria Delgado", "Super Interesting Video, It help me on my classes. ");
 
-
         video1.AddComment(comment1);
         video1.AddComment(comment2);
         video1.AddComment(comment3);
