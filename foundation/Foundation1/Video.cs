@@ -1,34 +1,54 @@
-public class Video{
+using System;
+using System.Collections.Generic;
+using System.Reflection;
 
-public string _title;
-public string _author;
-public int _length;
-public List<Comments> _comments = new List<Comments>();
-
-
-
-public int GetNumberComment(int number){
-
-    number= _comments.Count;
-
-    return number; 
-}
-
-public void Display(){
-
-Console.WriteLine($"{_title}");
-Console.WriteLine($"{_author}");
-
-foreach(Comments comment in _comments)
+public class Video
 {
+    public string _title;
+    public string _author;
+    public int _length;
+    public List<Comment> _comments = new List<Comment>();
 
-comment.ShowComment();
+
+    public Video(string title, string author, int length)
+
+    {
+        _title = title;
+        _author = author;
+        _length = length;
+
+    }
+
+
+    public void AddComment(Comment comment)
+    {
+
+        _comments.Add(comment);
+    }
+    public int GetNumberOfComments()
+    {
+        return _comments.Count;
+    }
+
+    public void Display()
+    {
+
+        Console.WriteLine($"Title: {_title}");
+        Console.WriteLine($"Author: {_author}");
+        Console.WriteLine($"Length: {_length} seconds");
+        Console.WriteLine($"Number of comments: {GetNumberOfComments()}");
+        Console.WriteLine("Comments:");
+
+        foreach (Comment comment in _comments)
+        {
+
+            comment.ShowComment();
+        }
+
+        Console.WriteLine();
+
+    }
+
 
 
 }
-
-}
-
-
-
-} 
