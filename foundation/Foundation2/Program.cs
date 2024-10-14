@@ -6,7 +6,6 @@ class Program
 {
     static void Main(string[] args)
     {
-
         // Create some addresses
         Address address1 = new Address("5109 Hallmarc Dr", "Farmington", "NM", "USA");
         Address address2 = new Address("1832 N 1550 E", "Provo", "UT", "USA");
@@ -17,12 +16,10 @@ class Program
         Customer customer2 = new Customer("Ruben Aquino", address2);
         Customer customer3 = new Customer("Julia Fernandez", address3);
 
-
         // Create some products
         Product product1 = new Product("Laptop", "P001", 800.00m, 1);
         Product product2 = new Product("Mouse", "P002", 20.00m, 2);
         Product product3 = new Product("Keyboard", "P003", 50.00m, 1);
-
 
         // Creatoing  orders
         Order order1 = new Order(customer1);
@@ -38,13 +35,10 @@ class Program
         order3.AddProduct(product2);
         order3.AddProduct(product3);
 
-
-
         // Display order details
         DisplayOrderDetails(order1);
         DisplayOrderDetails(order2);
         DisplayOrderDetails(order3);
-
 
     }
     static void DisplayOrderDetails(Order order)
