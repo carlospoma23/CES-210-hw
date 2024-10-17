@@ -26,7 +26,7 @@ public class ReflectingActivity : Activity
             "How did you feel in that moment?",
             "What made that experience meaningful?",
             "How can you apply what you learned to your life today?",
-            "What would you do differently if faced with a similar situation?"
+            "What would you do differently if faced with a similar situation?",
             "What do your parents, your wife or your children think about it? "
         };
     }

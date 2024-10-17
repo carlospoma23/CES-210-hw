@@ -41,14 +41,13 @@ public class Menu
                 listing.RunListing();
                 return false; // return menu
 
-
             case "4":
                 Console.WriteLine("Goodbye!");
-                return true; // Indica que se debe salir del menú
+                return true; // end menu
 
             default:
                 Console.WriteLine("Invalid choice. Please try again.");
-                return false; // Volver al menú
+                return false; // return menu.
         }
     }
 }

@@ -60,8 +60,6 @@ public class ListingActivity : Activity
         List<string> responses = new List<string>();
         DateTime endTime = DateTime.Now.AddSeconds(durationInSeconds);
 
-        //Console.WriteLine($"You have {durationInSeconds} seconds to list your responses:");
-
         while (DateTime.Now < endTime)
         {
             Console.Write("> ");
@@ -69,11 +67,9 @@ public class ListingActivity : Activity
 
             if (!string.IsNullOrWhiteSpace(response))
             {
-                responses.Add(response);  // Agrega la respuesta si no está vacía
+                responses.Add(response);  // Add response if it is not empty.
             }
         }
-
-        //Console.WriteLine("\nTime's up! No more entries allowed.");
         return responses;
     }
 
