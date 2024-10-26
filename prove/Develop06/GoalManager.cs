@@ -107,8 +107,8 @@ public class GoalManager
         if (!File.Exists(fileName))
         {
             Console.WriteLine("File not found. Please try again.");
-            Console.WriteLine("Press any key to return to the menu...");
-            Console.ReadKey(); // For testing, can be removed
+            //Console.WriteLine("Press any key to return to the menu...");
+            // Console.ReadKey(); // For testing, can be removed
             return;
         }
 
@@ -165,8 +165,8 @@ public class GoalManager
             Console.WriteLine($"An error occurred while loading the file: {ex.Message}");
         }
 
-        Console.WriteLine("Press any key to return to the menu...");
-        Console.ReadKey(); // Pause, can be removed
+        //Console.WriteLine("Press any key to return to the menu...");
+        //Console.ReadKey(); // Pause, can be removed
     }
 
 
@@ -207,9 +207,9 @@ public class GoalManager
 
             if (allGoalsComplete)
             {
-                Console.WriteLine("Fantastic! You've accomplished all your goals! Keep up the amazing work!");
+                Console.WriteLine("Fantastic! You've accomplished all your SIMPLE and CHECKIST GOALS goals! Keep up the amazing work!");
                 Console.WriteLine("Press Enter to return to the menu.");
-                Console.ReadLine(); // Espera a que el usuario presione Enter ante
+                Console.ReadLine(); // wait for enter
             }
         }
         else

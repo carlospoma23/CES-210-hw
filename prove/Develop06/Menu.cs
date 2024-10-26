@@ -15,7 +15,7 @@ public class Menu
     {
         while (true)
         {
-            //Console.Clear();
+            Console.Clear();
             Console.WriteLine($"You have {_goalManager.GetTotalScore()} points.");
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
