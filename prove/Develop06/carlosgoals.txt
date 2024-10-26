@@ -1,0 +1,7 @@
+2650
+SimpleGoal|Give a talk|speak in sacrament meeting when asked|100|True
+EternalGoal|study the scriptures|study scriptures for at least 10 minutes|50
+ChecklistGoal|attend the temple|attend and perform any ordinance|50|500|3|3
+SimpleGoal|Workout|workout this week at least 30 minu|300|True
+SimpleGoal|run|run on the street|50|True
+SimpleGoal|study C#|Study eveyday at least 30 minutes|500|True

@@ -1,0 +1,5 @@
+0
+SimpleGoal|awdawd|asdasdas|100|False
+EternalGoal|sdfsadfasgs|asdasdasdas|300
+ChecklistGoal|temple|go to the temple|59|400|3|0
+EternalGoal|pray|pray everyday |40
