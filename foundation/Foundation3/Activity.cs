@@ -28,6 +28,8 @@ public class Activity
         return 0;
     }
 
+
+    // I will use F1 because it tell me the format of the number: F format, 1 one decimal number after point.
     public string GetSummary()
     {
         return $"{_date:dd MMM yyyy} {GetType().Name} ({_minutes} min) - Distance: {GetDistance():F1}, Speed: {GetSpeed():F1}, Pace: {GetPace():F1}";

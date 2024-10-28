@@ -10,17 +10,17 @@ public class Cycling : Activity
 
     public override double GetDistance()
     {
-        return (_speed * _minutes) / 60; // Calcula y devuelve la distancia en millas
+        return (_speed * _minutes) / 60; // compute and return distance in mills
     }
 
     public override double GetSpeed()
     {
-        return _speed; // Devuelve la velocidad en mph
+        return _speed; // return speed in mph
     }
 
     public override double GetPace()
     {
-        return 60 / _speed; // Calcula y devuelve el ritmo en minutos por milla
+        return 60 / _speed; // compute and return pace in min by milla
     }
 
 }

@@ -19,7 +19,7 @@ public class Running : Activity
 
     public override double GetPace()
     {
-        return _minutes / _distance; // Calcula y devuelve el ritmo en min por milla
+        return _minutes / _distance; // compute and return Pace in milla
     }
 
 }

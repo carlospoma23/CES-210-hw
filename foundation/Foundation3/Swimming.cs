@@ -1,4 +1,4 @@
-// Clase derivada para Swimming
+
 public class Swimming : Activity
 {
     private int _laps;
